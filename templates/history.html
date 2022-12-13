@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Transacted</th>
+        </tr>
+        </thead>
+    <tbody class="table-group-divider">
+
+        <tbody>
+        {% for row in template%}
+        <tr>
+            <td>{{ row["symbol"] }}</td>
+            <td>{{ row["shares"] }}</td>
+            <td>{{ row["price"] }}</td>
+            <td>{{ row["time"] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+  </table>
+{% endblock %}
